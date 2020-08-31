@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class main{
 
-    abstract class chef {
+    public abstract class chef {
         
         String firstName;
         String lastName;
@@ -23,11 +23,20 @@ public class main{
             return lastName;
         }
 
+        void addRestaurant(){
+
+        }
+
+        //return arraylist fo restaurants
+        Restaurant returnRestaurants(){
+            return suggestions;
+        }
+
         ArrayList<Restaurant> suggestions =  new ArrayList<Object>;
     }
 
 
-    abstract class Restaurant{
+    public abstract class Restaurant{
 
         String name;
         String address;
@@ -55,7 +64,7 @@ public class main{
     }
 
 
-    abstract class Rating{
+    public interface Rating{
 
         int score;
         
@@ -68,12 +77,12 @@ public class main{
         }
 
 
-    abstract class Menu{
+    public abstract class Menu{
 
             ArrayList<menuItem> menuList = new ArrayList<menuItem>;
         }
 
-    abstract class menuItem{
+    public abstract class menuItem{
 
         float price;
         String dishName;
