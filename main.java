@@ -6,33 +6,24 @@ public class main{
         
         String firstName;
         String lastName;
+        ArrayList<Restaurant> suggestions =  new ArrayList<Restaurant>;
 
-        String getFirstName(){
+        String getChefName(){
             return firstName;
         }
 
-        void setFirstName(String givenName){
+        void setChefName(String givenName, String familyName){
             firstName = givenName;
-        }
-
-        void setLastName(String familyName){
             lastName = familyName;
         }
 
-        String getLastName(){
-            return lastName;
+        void addRestaurant(Restaurant resto){
+            suggestions.add(resto);
         }
 
-        void addRestaurant(){
-
-        }
-
-        //return arraylist fo restaurants
         Restaurant returnRestaurants(){
             return suggestions;
         }
-
-        ArrayList<Restaurant> suggestions =  new ArrayList<Object>;
     }
 
 
@@ -41,12 +32,13 @@ public class main{
         String name;
         String address;
         String phoneNumber;
+        ArrayList<menuItem> menu =  new ArrayList<menuItem>;
 
         void setName(String restaurantName){
             name = restaurantName;
         }
 
-        String returnName(){
+        String getName(){
             return name;
         }
 
@@ -54,33 +46,33 @@ public class main{
             address = restaurantAddress;
         }
 
-        String returnAddress(){
+        String getAddress(){
             return address;
         }
 
         void setPhoneNumber(String phone_Number){
             phoneNumber = phone_Number;
         }
+
+        String getPhoneNumber(){
+            return phoneNumber
+        }
+
+        void addMenuItem(menuItem item){
+            menu.add(item);
+        }
+
+        void printRestoAndMenu(){
+            system.out.println("Name: " + name + "/n" 
+           +  "Address: " + address + "/n"
+           +  "phoneNumber: " + phoneNumber + "/n");
+           for(String i : menu){
+               println(i);
+           }
+        }
+
     }
 
-
-    public interface Rating{
-
-        int score;
-        
-        private int ratingSystem(int score){
-
-            ArrayList<Integer> listOfRatings = new ArrayList<Integer>;
-                listOfRatings.add(score);
-
-            float avgRating = listOfRatings.stream().mapToInt(a->a).average();
-        }
-
-
-    public abstract class Menu{
-
-            ArrayList<menuItem> menuList = new ArrayList<menuItem>;
-        }
 
     public abstract class menuItem{
 
@@ -110,5 +102,17 @@ public class main{
 
         }
 
+
+    public interface Rating{
+
+        int score;
+        
+        private int ratingSystem(int score){
+
+            ArrayList<Integer> listOfRatings = new ArrayList<Integer>;
+                listOfRatings.add(score);
+
+            float avgRating = listOfRatings.stream().mapToInt(a->a).average();
+        }
     }
 }
